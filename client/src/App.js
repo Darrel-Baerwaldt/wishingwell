@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
+import axios from "axios"
+
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState("")
+
+  useEffect(() => {
+    getUsers()
+    // addUsers()
+  }, [])
+
+  const getUsers = async () => {
+    let response = await axios.get("/users")
+    
+    console.log(response)
+  };
+
+  // const addUsers = async () => {
+  //   const newUser = {
+  //     fName: "darrel",
+  //     lName: "lastName",
+  //     username: "username",
+  //     email: "email",
+  //     password: "hash",
+  //   };
+  //   let response = await axios.post("/users/register", newUser)
+    
+  //   console.log(response)
+  // };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hi</h1>
     </div>
   );
 }
