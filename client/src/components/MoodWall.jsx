@@ -1,8 +1,7 @@
 // import React from 'react'
 // import { useState } from 'react'
 import Button from "@mui/material/Button";
-// import Sounds from './Sounds'
-// import CropSquareRoundedIcon from '@mui/icons-material/CropSquareRounded';
+import Tooltip from "@mui/material/Tooltip"
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined';
 import SentimentDissatisfiedOutlinedIcon from '@mui/icons-material/SentimentDissatisfiedOutlined';
 import HotelOutlinedIcon from '@mui/icons-material/HotelOutlined';
@@ -19,38 +18,58 @@ import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepart
 
 export default function Key() { 
 
+  // const [isShown, setIsShown] = useState(false);
+  // const popcorn = document.querySelector('#popcorn');
+  // const tooltip = document.querySelector('#tooltip');
+// createPopper(popcorn, tooltip);
+
   return (
-     <>
+    <>
+    <h1>Welcome to the Mood Wall</h1>
+    <h3>Here you can select your current mood to access mood enhancers!</h3>
+    <hr />
+    <br />
      <div>
         
-     <Button className="happyBtn">{<SentimentSatisfiedOutlinedIcon />}</Button>
+    <Tooltip title="Happy">
+     <Button className="happyBtn" color="success" fontSize="large">{<SentimentSatisfiedOutlinedIcon />} </Button >
+     </Tooltip>
      
-     
+     <Tooltip title="Sad">
      <Button className="sadBtn">{<SentimentDissatisfiedOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Sleepy">
      <Button className="sleepyBtn">{<HotelOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Party">
      <Button className="partyBtn">{<CelebrationOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Zen">
      <Button className="zenBtn">{<SelfImprovementOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Adventurous">
      <Button className="adventureBtn">{<HikingOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Stressed">
      <Button className="stressBtn">{<DirectionsRunOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Inspired">
      <Button className="studyBtn">{<MenuBookOutlinedIcon />}</Button>
+     </Tooltip>
      
-     
+     <Tooltip title="Uninspired">
      <Button className="lowConfidenceBtn">{<SentimentNeutralOutlinedIcon />}</Button>
+     </Tooltip>
         
-     
+     <Tooltip title="Angry">
      <Button className="madBtn">{<LocalFireDepartmentOutlinedIcon />}</Button>
+     </Tooltip>
     
      </div>
      </>
