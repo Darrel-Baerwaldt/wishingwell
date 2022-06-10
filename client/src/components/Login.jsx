@@ -29,6 +29,8 @@ export default function SignIn() {
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
+        <h1>Welcome to the Wishing Well!</h1>
+      <h3>Please login below to access the mood wall</h3>
         <Box
           sx={{
             marginTop: 8,
@@ -74,7 +76,8 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              <Link href="/moodwall" style={{color: "white"}}>{"Sign In"}</Link>
+              {/* Sign In */}
             </Button>
             <Grid container>
               <Grid item xs>
@@ -83,7 +86,7 @@ export default function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link href="/users/register" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
