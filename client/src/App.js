@@ -1,11 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import axios from "axios"
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import './App.css';
+import ErrorPage from './components/ErrorPage';
 import Login from './components/Login'
+import MoodWall from './components/MoodWall'
+import Register from './components/Register'
 
 function App() {
-  const [user, setUser] = useState("")
+  // const [user, setUser] = useState("")
 
   useEffect(() => {
     // getUsers()
@@ -34,9 +38,14 @@ function App() {
   };
   return (
     <div className="App">
-      <h1>Welcome to the Wishing Well!</h1>
-      <h3>Please login below to access the mood wall</h3>
-      <Login />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />}/>
+          <Route path="/users/register" element={<Register />}/>
+          <Route path="/moodwall" element={<MoodWall />}/>
+          <Route path="*" element={<ErrorPage />}/>
+        </Routes>
+      </Router>
     </div>
   );
 }
