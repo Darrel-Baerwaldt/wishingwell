@@ -12,17 +12,25 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+  const navigate = useNavigate()
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
+    const user = {
       email: data.get('email'),
       password: data.get('password'),
-    });
+    };
+    console.log(user)
+    await axios.post("/users/login", user)
+    .then(res => console.log("res"))
+    navigate('/moodwall')
   };
 
   return (
@@ -72,7 +80,7 @@ export default function SignIn() {
             />
             <Button
               type="submit"
-              href="/moodwall"
+              // href="/moodwall"
               fullWidth
               variant="contained"
               style={{color: "white"}}

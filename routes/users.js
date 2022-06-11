@@ -12,6 +12,8 @@ const userController = require("../controllers/userController")
 // });
 router.get('/', userController.userTest);
 
+router.post('/login', userController.userLogin);
+
 router.post("/register", userController.userRegister);
 // router.post('/register', (req, res, next) => {
 //   const { fName, lName, username, email, password} =
