@@ -7,6 +7,7 @@ import ErrorPage from './components/ErrorPage';
 import Login from './components/Login'
 import MoodWall from './components/MoodWall'
 import Register from './components/Register'
+import Inspired from './components/Inspired'
 
 function App() {
   // const [user, setUser] = useState("")
@@ -41,6 +42,7 @@ function App() {
           <Route path="/" element={<Login />}/>
           <Route path="/users/register" element={<Register />}/>
           <Route path="/moodwall" element={<MoodWall />}/>
+          <Route path="/moodwall/inspired" element={<Inspired/>}/>
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
       </Router>

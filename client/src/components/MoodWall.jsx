@@ -14,10 +14,16 @@ import SentimentNeutralOutlinedIcon from '@mui/icons-material/SentimentNeutralOu
 import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 // import EmptyKey from './EmptyKey';
 // import FilledKey from './FilledKey';
+import { useNavigate } from "react-router-dom";
 
 
 export default function Key() { 
-
+  
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `inspired`; 
+    navigate(path);
+  }
   // const [isShown, setIsShown] = useState(false);
   // const popcorn = document.querySelector('#popcorn');
   // const tooltip = document.querySelector('#tooltip');
@@ -60,7 +66,7 @@ export default function Key() {
      </Tooltip>
      
      <Tooltip title="Inspired">
-     <Button className="studyBtn">{<MenuBookOutlinedIcon />}</Button>
+     <Button className="studyBtn" id="inspired" onClick={routeChange}>{<MenuBookOutlinedIcon />}</Button>
      </Tooltip>
      
      <Tooltip title="Uninspired">
