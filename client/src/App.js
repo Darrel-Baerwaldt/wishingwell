@@ -8,28 +8,30 @@ function App() {
   const [user, setUser] = useState("")
 
   useEffect(() => {
-    getUsers()
-    // addUsers()
+    // getUsers()
+    addUsers()
   }, [])
 
-  const getUsers = async () => {
-    let response = await axios.get("/users")
-    
-    console.log(response)
-  };
-
-  // const addUsers = async () => {
-  //   const newUser = {
-  //     fName: "darrel",
-  //     lName: "lastName",
-  //     username: "username",
-  //     email: "email",
-  //     password: "hash",
-  //   };
-  //   let response = await axios.post("/users/register", newUser)
+  // const getUsers = async () => {
+  //   let response = await axios.get("/users")
     
   //   console.log(response)
   // };
+
+  const addUsers = async () => {
+    const newUser = {
+      fName: "Eliza",
+      lName: "lastName",
+      username: "username",
+      email: "ELIZAZIP",
+      zipcode: 95020,
+      password: "hash",
+    };
+    await axios.post("/users/register", newUser)
+    .then(res => console.log(res))
+    
+    // console.log(response)
+  };
   return (
     <div className="App">
       <h1>Welcome to the Wishing Well!</h1>
