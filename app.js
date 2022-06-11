@@ -11,9 +11,6 @@ const app = express();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 
-
-
-
 mongoose
 .connect(process.env.DB_URI, {
   dbName: process.env.DB_NAME,
@@ -53,7 +50,12 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  // res.render('error');
+  res.json({
+    message: err.message,
+    error: err
+  });
+
 });
 
 module.exports = app;
