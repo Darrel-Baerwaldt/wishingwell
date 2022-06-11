@@ -72,13 +72,15 @@ export default function SignIn() {
             />
             <Button
               type="submit"
+              href="/moodwall"
               fullWidth
               variant="contained"
+              style={{color: "white"}}
               sx={{ mt: 3, mb: 2 }}
             >
-              <Link href="/moodwall" style={{color: "white"}}>{"Sign In"}</Link>
-              {/* Sign In */}
+              Sign In
             </Button>
+
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
