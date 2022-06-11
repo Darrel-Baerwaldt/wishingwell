@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import axios from "axios"
+// import React, {useEffect} from 'react';
+// import axios from "axios"
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import './App.css';
@@ -7,14 +7,15 @@ import ErrorPage from './components/ErrorPage';
 import Login from './components/Login'
 import MoodWall from './components/MoodWall'
 import Register from './components/Register'
+// import SnakeGame from './components/SnakeGame';
 
 function App() {
   // const [user, setUser] = useState("")
 
-  useEffect(() => {
-    // getUsers()
-    addUsers()
-  }, [])
+  // useEffect(() => {
+  //   // getUsers()
+  //   addUsers()
+  // }, [])
 
   // const getUsers = async () => {
   //   let response = await axios.get("/users")
@@ -22,20 +23,20 @@ function App() {
   //   console.log(response)
   // };
 
-  const addUsers = async () => {
-    const newUser = {
-      fName: "Eliza",
-      lName: "lastName",
-      username: "username",
-      email: "ELIZAZIP",
-      zipcode: 95020,
-      password: "hash",
-    };
-    await axios.post("/users/register", newUser)
-    .then(res => console.log(res))
+  // const addUsers = async () => {
+  //   const newUser = {
+  //     fName: "Eliza",
+  //     lName: "lastName",
+  //     username: "username",
+  //     email: "ELIZAZIP",
+  //     zipcode: 95020,
+  //     password: "hash",
+  //   };
+  //   await axios.post("/users/register", newUser)
+  //   .then(res => console.log(res))
     
-    // console.log(response)
-  };
+  //   // console.log(response)
+  // };
   return (
     <div className="App">
       <Router>
@@ -43,6 +44,7 @@ function App() {
           <Route path="/" element={<Login />}/>
           <Route path="/users/register" element={<Register />}/>
           <Route path="/moodwall" element={<MoodWall />}/>
+          {/* <Route path="/bored" element={<SnakeGame />}/> */}
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
       </Router>

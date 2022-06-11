@@ -55,7 +55,7 @@ export default function Key() {
      </Tooltip>
      
      <Tooltip title="Adventurous">
-     <Button className="adventureBtn">{<HikingOutlinedIcon />}</Button>
+     <Button href="/adventurous" className="adventureBtn">{<HikingOutlinedIcon />}</Button>
      </Tooltip>
      </div>
      <br />
@@ -69,8 +69,8 @@ export default function Key() {
      <Button className="studyBtn">{<MenuBookOutlinedIcon />}</Button>
      </Tooltip>
      
-     <Tooltip title="Uninspired">
-     <Button className="lowConfidenceBtn">{<SentimentNeutralOutlinedIcon />}</Button>
+     <Tooltip title="Bored">
+     <Button href="/bored" className="boredBtn">{<SentimentNeutralOutlinedIcon />}</Button>
      </Tooltip>
      </div>
         
