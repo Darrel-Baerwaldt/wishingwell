@@ -1,5 +1,3 @@
-import React, { useEffect } from "react";
-import axios from "axios";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./App.css";
@@ -19,34 +17,7 @@ import Bored from "./components/Bored";
 import Zen from "./components/Zen";
 
 function App() {
-  // const [user, setUser] = useState("")
-
-  useEffect(() => {
-    // getUsers()
-    addUsers();
-  }, []);
-
-  // const getUsers = async () => {
-  //   let response = await axios.get("/users")
-
-  //   console.log(response)
-  // };
-
-  const addUsers = async () => {
-    const newUser = {
-      fName: "Eliza",
-      lName: "lastName",
-      username: "username",
-      email: "ELIZAZIP",
-      zipcode: 95020,
-      password: "hash",
-    };
-    await axios
-      .post("/users/register", newUser)
-      .then((res) => console.log(res));
-
-    // console.log(response)
-  };
+  
   return (
     <div className="App">
       <Router>
