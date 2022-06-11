@@ -1,5 +1,5 @@
-// import React, {useEffect, useState} from 'react';
-// import axios from "axios"
+import React, {useEffect} from 'react';
+import axios from "axios"
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 import './App.css';
@@ -11,10 +11,10 @@ import Register from './components/Register'
 function App() {
   // const [user, setUser] = useState("")
 
-  // useEffect(() => {
-  //   getUsers()
-    // addUsers()
-  // }, [])
+  useEffect(() => {
+    // getUsers()
+    addUsers()
+  }, [])
 
   // const getUsers = async () => {
   //   let response = await axios.get("/users")
@@ -22,18 +22,20 @@ function App() {
   //   console.log(response)
   // };
 
-  // const addUsers = async () => {
-  //   const newUser = {
-  //     fName: "darrel",
-  //     lName: "lastName",
-  //     username: "username",
-  //     email: "email",
-  //     password: "hash",
-  //   };
-  //   let response = await axios.post("/users/register", newUser)
+  const addUsers = async () => {
+    const newUser = {
+      fName: "Eliza",
+      lName: "lastName",
+      username: "username",
+      email: "ELIZAZIP",
+      zipcode: 95020,
+      password: "hash",
+    };
+    await axios.post("/users/register", newUser)
+    .then(res => console.log(res))
     
-  //   console.log(response)
-  // };
+    // console.log(response)
+  };
   return (
     <div className="App">
       <Router>
