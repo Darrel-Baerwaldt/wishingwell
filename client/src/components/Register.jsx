@@ -12,6 +12,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import res from 'express/lib/response';
+// import MoodWall from './MoodWall'
+import axios from 'axios'
 
 function Copyright(props) {
   return (
@@ -28,14 +31,21 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = (event) => {
+export default function Register() {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("Button was clicked")
     const data = new FormData(event.currentTarget);
     console.log({
+      fName: data.get('fName'),
+      lName: data.get('lName'),
+      username: data.get('username'),
+      zipCode: data.get('zipCode'),
       email: data.get('email'),
       password: data.get('password'),
     });
+    // console.log(data)
+    // await axios.post("/users/register", data).then(res => console.log("res"))
   };
 
   return (
@@ -61,10 +71,10 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="fName"
                   required
                   fullWidth
-                  id="firstName"
+                  id="fName"
                   label="First Name"
                   autoFocus
                 />
@@ -73,9 +83,9 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
+                  id="lName"
                   label="Last Name"
-                  name="lastName"
+                  name="lName"
                   autoComplete="family-name"
                 />
               </Grid>
@@ -103,6 +113,17 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
+                  name="zipCode"
+                  label="ZipCode"
+                  type="number"
+                  id="zipCode"
+                  autoComplete="new-zipCode"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
                   name="password"
                   label="Password"
                   type="password"
@@ -116,9 +137,9 @@ export default function SignUp() {
                   fullWidth
                   name="re-password"
                   label="Repeat Password"
-                  type="re-password"
-                  id="re-password"
-                  autoComplete="new-re-password"
+                  type="password"
+                  id="password"
+                  autoComplete="new-password"
                 />
               </Grid>
               <Grid item xs={12}>
@@ -129,6 +150,7 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
+            // href="/"
               type="submit"
               fullWidth
               variant="contained"

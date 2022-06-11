@@ -11,7 +11,7 @@ import HikingOutlinedIcon from '@mui/icons-material/HikingOutlined';
 import DirectionsRunOutlinedIcon from '@mui/icons-material/DirectionsRunOutlined';
 import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import SentimentNeutralOutlinedIcon from '@mui/icons-material/SentimentNeutralOutlined';
-import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
+// import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
 // import EmptyKey from './EmptyKey';
 // import FilledKey from './FilledKey';
 
@@ -32,7 +32,7 @@ export default function Key() {
      <div>
         
     <Tooltip title="Happy">
-     <Button className="happyBtn" color="success" fontSize="large">{<SentimentSatisfiedOutlinedIcon />} </Button >
+     <Button color="success" fontSize="large">{<SentimentSatisfiedOutlinedIcon />} </Button >
      </Tooltip>
      
      <Tooltip title="Sad">
@@ -42,7 +42,10 @@ export default function Key() {
      <Tooltip title="Sleepy">
      <Button className="sleepyBtn">{<HotelOutlinedIcon />}</Button>
      </Tooltip>
+     </div>
+     <br />
      
+     <div>
      <Tooltip title="Party">
      <Button className="partyBtn">{<CelebrationOutlinedIcon />}</Button>
      </Tooltip>
@@ -54,7 +57,10 @@ export default function Key() {
      <Tooltip title="Adventurous">
      <Button className="adventureBtn">{<HikingOutlinedIcon />}</Button>
      </Tooltip>
-     
+     </div>
+     <br />
+
+     <div>
      <Tooltip title="Stressed">
      <Button className="stressBtn">{<DirectionsRunOutlinedIcon />}</Button>
      </Tooltip>
@@ -66,12 +72,13 @@ export default function Key() {
      <Tooltip title="Uninspired">
      <Button className="lowConfidenceBtn">{<SentimentNeutralOutlinedIcon />}</Button>
      </Tooltip>
-        
-     <Tooltip title="Angry">
-     <Button className="madBtn">{<LocalFireDepartmentOutlinedIcon />}</Button>
-     </Tooltip>
-    
      </div>
+        
+     {/* <Tooltip title="Angry">
+     <Button className="madBtn">{<LocalFireDepartmentOutlinedIcon />}</Button>
+     </Tooltip> */}
+    
+     {/* </div> */}
      </>
 
      
