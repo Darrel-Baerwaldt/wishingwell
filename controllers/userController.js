@@ -29,7 +29,6 @@ exports.userTest = async (req, res) => {
           password: hash
         });
         
-        
         newUser.save()
         return res.json("it worked")
       }
@@ -39,37 +38,43 @@ exports.userTest = async (req, res) => {
 
   };
 
-  exports.userLogin = (req, res) => {
-    console.log(req.body)
-    // res.json("Tina")
-    // const { email, password } = req.body;
+  exports.userLogin = async (req, res, next) => {
+    const {email, password} = req.body
+    // console.log(req.body)
     // let token;
-    // let user;
+    let user;
   
-    // try {
-    //   user = await User.findOne({ email: email });
-    //   console.log(user)
+    try {
+      user = await User.findOne({ email: email });
+      // console.log("user was found @userController", user)
   
-    //   const passMatch = bcrypt.compareSync(password, user.password);
-    //   if (!passMatch) {
-    //     return res.render('login', { message: 'Please enter a valid password!' });
-    //   }
+      const passMatch = bcrypt.compareSync(password, user.password);
+
+      // if (!user) {
+      //   console.log('User does not exist')
+      // }
+      if (!passMatch) {
+        console.log('Please enter a valid password!');
+      }
+      console.log("passwords match")
   
-    //   const payload = {
-    //     fName: user.fName,
-    //     lName: user.lName,
-    //     username: user.username,
-    //     email: email,
-    //     isAdmin: user.isAdmin,
-    //     id: user._id,
-    //   };
-    //   console.log(payload)
+      // const payload = {
+      //   // fName: user.fName,
+      //   // lName: user.lName,
+      //   // username: user.username,
+      //   email: email,
+      //   password: password,
+      //   // isAdmin: user.isAdmin,
+      //   id: user._id,
+      // };
+      // // console.log(payload)
   
-    //   token = jwt.sign(payload, secret, { expiresIn: '1d' });
-    //   res.cookie('loggedIn', token);
-    // } catch (err) {
-    //   res.status(500).json({ err: err.message });
-    // }
+      // token = jwt.sign(payload, secret, { expiresIn: '1d' });
+      // console.log("token is ", token)
+      // res.cookie('loggedIn', token);
+    } catch (err) {
+      res.status(500).json({ err: err.message });
+    }
   
     // ///////////////// UNSURE IF I WILL USE THESE ///////////////////
   

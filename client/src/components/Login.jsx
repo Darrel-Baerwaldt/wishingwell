@@ -27,9 +27,9 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     };
-    console.log(user)
+    // console.log(user)
     await axios.post("/users/login", user)
-    .then(res => console.log("res"))
+    // .then(res => console.log("res"))
     navigate('/moodwall')
   };
 
