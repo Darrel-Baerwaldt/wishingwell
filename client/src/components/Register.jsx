@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Copyright(props) {
   return (
@@ -28,14 +30,23 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignUp() {
-  const handleSubmit = (event) => {
+export default function Register() {
+  const navigate = useNavigate()
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log("Button was clicked")
     const data = new FormData(event.currentTarget);
-    console.log({
+    const newUser = {
+      fName: data.get('fName'),
+      lName: data.get('lName'),
+      username: data.get('username'),
+      zipCode: data.get('zipCode'),
       email: data.get('email'),
       password: data.get('password'),
-    });
+    }
+    console.log("newUser is ", newUser)
+    await axios.post("/users/register", newUser).then(res => console.log("res"))
+    navigate('/')
   };
 
   return (
