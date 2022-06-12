@@ -1,5 +1,7 @@
 // import React from 'react'
 // import { useState } from 'react'
+import { Container } from "@mui/material";
+import CssBaseline from '@mui/material/CssBaseline';
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import SentimentSatisfiedOutlinedIcon from "@mui/icons-material/SentimentSatisfiedOutlined";
@@ -29,7 +31,8 @@ export default function Key() {
   // createPopper(popcorn, tooltip);
 
   return (
-    <>
+    <Container component="main" maxWidth="md">
+        <CssBaseline />
       <h1>Welcome to the Mood Wall</h1>
       <h3>Here you can select your current mood to access mood enhancers!</h3>
       <hr />
@@ -109,6 +112,6 @@ export default function Key() {
           </NavLink>
         </Tooltip>
       </div>
-    </>
+    </Container >
   );
 }

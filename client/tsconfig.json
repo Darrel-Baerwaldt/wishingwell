@@ -1,0 +1,61 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "build/dist/frogger",
+    "module": "esnext",
+    "target": "es6",
+    "lib": [
+      "es6",
+      "esnext.asynciterable",
+      "dom"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "*": [
+        "*",
+        "src/*",
+        "src/setup/*",
+        "src/logic/*",
+        "src/models/*",
+        "config/*"
+      ]
+    },
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/enzyme/setup.ts"
+  ],
+  // "include": [
+  //   "src/**/*"
+  // ]
+  "include": [
+    "./src",
+    "./test",
+    "./*",
+    "./config" 
+  ]
+}
