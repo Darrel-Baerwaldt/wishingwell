@@ -16,5 +16,6 @@
     "jade": "~1.11.0",
     "mongoose": "^6.3.5",
     "morgan": "~1.9.1"
-  }
+  },
+  "devDependencies": {}
 }
