@@ -10,7 +10,6 @@ import HotelOutlinedIcon from "@mui/icons-material/HotelOutlined";
 import CelebrationOutlinedIcon from "@mui/icons-material/CelebrationOutlined";
 import SelfImprovementOutlinedIcon from "@mui/icons-material/SelfImprovementOutlined";
 import HikingOutlinedIcon from "@mui/icons-material/HikingOutlined";
-import DirectionsRunOutlinedIcon from "@mui/icons-material/DirectionsRunOutlined";
 import MenuBookOutlinedIcon from "@mui/icons-material/MenuBookOutlined";
 import SentimentNeutralOutlinedIcon from "@mui/icons-material/SentimentNeutralOutlined";
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
@@ -42,57 +41,7 @@ export default function Key() {
         <Tooltip title="Happy">
           <NavLink to="/happy">
             <Button className="happyBtn" fontSize="large">
-              {<SentimentSatisfiedOutlinedIcon />}{" "}
-            </Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Sad">
-          <NavLink to="/sad">
-            <Button className="sadBtn">
-              {<SentimentDissatisfiedOutlinedIcon />}
-            </Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Sleepy">
-          <NavLink to="/sleepy">
-            <Button className="sleepyBtn">{<HotelOutlinedIcon />}</Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Party">
-          <NavLink to="/party">
-            <Button className="partyBtn">{<CelebrationOutlinedIcon />}</Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Zen">
-          <NavLink to="/zen">
-            <Button className="zenBtn">
-              {<SelfImprovementOutlinedIcon />}
-            </Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Adventurous">
-          <NavLink to="/adventurous">
-            <Button className="adventureBtn">{<HikingOutlinedIcon />}</Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Stressed">
-          <NavLink to="/stressed">
-            <Button className="stressBtn" onClick={stressed}>
-              {<DirectionsRunOutlinedIcon />}
-            </Button>
-          </NavLink>
-        </Tooltip>
-
-        <Tooltip title="Inspired">
-          <NavLink to="/inspired">
-            <Button className="studyBtn" id="inspired">
-              {<MenuBookOutlinedIcon />}
+              {<SentimentSatisfiedOutlinedIcon style={{ fontSize: 70 }}/>}{" "}
             </Button>
           </NavLink>
         </Tooltip>
@@ -100,15 +49,57 @@ export default function Key() {
         <Tooltip title="Bored">
           <NavLink to="/bored">
             <Button className="lowConfidenceBtn">
-              {<SentimentNeutralOutlinedIcon />}
+              {<SentimentNeutralOutlinedIcon style={{ fontSize: 70 }}/>}
             </Button>
+          </NavLink>
+        </Tooltip>
+
+        <Tooltip title="Sad">
+          <NavLink to="/sad">
+            <Button className="sadBtn">
+              {<SentimentDissatisfiedOutlinedIcon style={{ fontSize: 70 }}/>}
+            </Button>
+          </NavLink>
+        </Tooltip>
+        <br />
+        <Tooltip title="Sleepy">
+          <NavLink to="/sleepy">
+            <Button className="sleepyBtn">{<HotelOutlinedIcon style={{ fontSize: 70 }} />}</Button>
+          </NavLink>
+        </Tooltip>
+
+        <Tooltip title="Stressed">
+          <NavLink to="/stressed">
+            <Button className="stressBtn" onClick={stressed}>
+              {<SelfImprovementOutlinedIcon style={{ fontSize: 70 }} />}
+            </Button>
+          </NavLink>
+        </Tooltip>
+
+        <Tooltip title="Adventurous">
+          <NavLink to="/adventurous">
+            <Button className="adventureBtn" >{<HikingOutlinedIcon style={{ fontSize: 70 }}/>}</Button>
+          </NavLink>
+        </Tooltip>
+        <br />
+        <Tooltip title="Inspired">
+          <NavLink to="/inspired">
+            <Button className="studyBtn" id="inspired">
+              {<MenuBookOutlinedIcon style={{ fontSize: 70 }}/>}
+            </Button>
+          </NavLink>
+        </Tooltip>
+
+        <Tooltip title="Party">
+          <NavLink to="/party">
+            <Button className="partyBtn">{<CelebrationOutlinedIcon style={{ fontSize: 70 }} />}</Button>
           </NavLink>
         </Tooltip>
 
         <Tooltip title="Angry">
           <NavLink to="/angry">
             <Button className="madBtn">
-              {<LocalFireDepartmentOutlinedIcon />}
+              {<LocalFireDepartmentOutlinedIcon style={{ fontSize: 70 }} />}
             </Button>
           </NavLink>
         </Tooltip>
