@@ -39,9 +39,13 @@
         "config/*"
       ]
     },
+    "types": [
+      // ... your other types
+      "node"
+    ],
   },
   "exclude": [
-    "node_modules",
+    // "node_modules",
     "build",
     "scripts",
     "acceptance-tests",
@@ -50,12 +54,14 @@
     "src/enzyme/setup.ts"
   ],
   // "include": [
-  //   "src/**/*"
+    // "src/**/*",
+    // "../node_modules",
   // ]
   "include": [
     "./src",
     "./test",
     "./*",
     "./config" 
-  ]
+  ],
 }
+
