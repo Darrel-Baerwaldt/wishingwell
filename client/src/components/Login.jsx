@@ -1,4 +1,4 @@
-import * as React from 'react';
+import {useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -15,22 +15,42 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-
 const theme = createTheme();
 
 export default function SignIn() {
   const navigate = useNavigate()
+  const [error, setError] = useState("")
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = ({currentTarget: input}) => {
+    setData({...data, [input.name]: input.value})
+  }
+ 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const user = {
-      email: data.get('email'),
-      password: data.get('password'),
-    };
-    // console.log(user)
-    await axios.post("/users/login", user)
-    // .then(res => console.log("res"))
-    navigate('/moodwall')
+    try {
+      const {data: res} = await axios.post("http://localhost:3001/users/login", data)
+      localStorage.setItem("token", res.data)
+      navigate('/moodwall')
+    } catch (error) {
+      if (
+        error.response &&
+        error.response.status >= 400 &&
+        error.response.status <= 500
+      ) {
+        setError(error.response.data.message)
+      }
+    }
+    // await axios.post("/users/login", user).then(res => {
+    //   console.log(res.json())
+    // })
+      // .then (data => {
+      //   console.log(data)
+      // })
+    // navigate('/moodwall')
   };
 
   return (
@@ -56,11 +76,14 @@ export default function SignIn() {
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
+              onChange={handleChange}
               required
               fullWidth
               id="email"
+              type="email"
               label="Email Address"
               name="email"
+              value={data.email}
               autoComplete="email"
               autoFocus
             />
@@ -68,12 +91,15 @@ export default function SignIn() {
               margin="normal"
               required
               fullWidth
+              onChange={handleChange}
+              type="password"
               name="password"
               label="Password"
-              type="password"
               id="password"
+              value={data.password}
               autoComplete="current-password"
             />
+            {error && <div>{error}</div>}
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
