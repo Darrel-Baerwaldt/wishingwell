@@ -16,14 +16,9 @@ import SentimentNeutralOutlinedIcon from "@mui/icons-material/SentimentNeutralOu
 import LocalFireDepartmentOutlinedIcon from "@mui/icons-material/LocalFireDepartmentOutlined";
 // import EmptyKey from './EmptyKey';
 // import FilledKey from './FilledKey';
-import { useNavigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Key() {
-  const navigate = useNavigate();
-
-  const stressed = () => {
-    navigate("/stressed");
-  };
 
   // const [isShown, setIsShown] = useState(false);
   // const popcorn = document.querySelector('#popcorn');
@@ -83,7 +78,7 @@ export default function Key() {
 
         <Tooltip title="Stressed">
           <NavLink to="/stressed">
-            <Button className="stressBtn" onClick={stressed}>
+            <Button className="stressBtn">
               {<DirectionsRunOutlinedIcon />}
             </Button>
           </NavLink>
