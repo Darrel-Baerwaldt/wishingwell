@@ -34,6 +34,7 @@ export default function SignIn() {
     try {
       const {data: res} = await axios.post("http://localhost:3001/users/login", data)
       localStorage.setItem("token", res.data)
+      res.cookie("Access Token", res.data)
       navigate('/moodwall')
     } catch (error) {
       if (
