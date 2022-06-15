@@ -11,12 +11,9 @@ export default function BoredPage() {
           <h1>Bored?</h1>
           <p>Distract yourself for a few with a classic game!</p>
           <Container component="main" maxWidth="md">
-        <CssBaseline />
-          
+          <CssBaseline />         
           <Frogger />
-          </Container>
-
-          
+          </Container>          
       </div>
     )
   }
