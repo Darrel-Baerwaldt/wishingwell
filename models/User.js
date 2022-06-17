@@ -1,12 +1,32 @@
 const mongoose = require("mongoose")
+const jwt = require('jsonwebtoken')
+const secret = process.env.JWT_SECRET;
+const Joi = require('joi')
+const passwordComplexity = require('joi-password-complexity');
+const { JSONCookie } = require("cookie-parser");
 
 const userSchema = mongoose.Schema({
-    fName: String,
-    lName: String,
-    username: String,
-    email: String,
-    zipcode: Number,
-    password: String
+    fName: {type: String, required: true},
+    lName: {type: String, required: true},
+    username: {type: String, required: true},
+    email: {type: String, required: true},
+    zipcode: {type: Number, required: true},
+    password: {type: String, required: true},
 })
 
-module.exports = mongoose.model("user", userSchema)
+userSchema.methods.generateAccessToken = function () {
+    const token = jwt.sign({_id: this._id}, secret, {expiresIn: "1d"})
+    return token
+}
+
+const User = mongoose.model("user", userSchema)
+
+const validate = (data) => {
+    const schema = Joi.object({
+        email: Joi.string().required().label("email"),
+        password: passwordComplexity().required().label("Password")
+    })
+    return schema.validate(data)
+}
+
+module.exports = {User, validate}
