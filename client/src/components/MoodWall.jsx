@@ -24,11 +24,6 @@ export default function Key() {
     navigate("/stressed");
   };
 
-  // const [isShown, setIsShown] = useState(false);
-  // const popcorn = document.querySelector('#popcorn');
-  // const tooltip = document.querySelector('#tooltip');
-  // createPopper(popcorn, tooltip);
-
   return (
     <Container component="main" maxWidth="md">
         <CssBaseline />
@@ -53,7 +48,7 @@ export default function Key() {
             </Button>
           </NavLink>
         </Tooltip>
-
+      
         <Tooltip title="Sad">
           <NavLink to="/sad">
             <Button className="sadBtn">
