@@ -3,7 +3,7 @@ const Journal = require('../models/Journal');
 exports.journalEntry = async (req, res) => {
   const { entries, userId, title, date, body } = req.body;
 
-  const journalEntryies = await journalEntry.findOne({ userId: userId });
+  const journalEntries = await journalEntry.findOne({ userId: userId });
 
   if (!userId) {
     const newJournal = new User.Journal({

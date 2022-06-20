@@ -10,7 +10,6 @@ const userSchema = mongoose.Schema({
     lName: {type: String, required: true},
     username: {type: String, required: true},
     email: {type: String, required: true},
-    zipcode: {type: Number, required: true},
     password: {type: String, required: true},
 })
 
