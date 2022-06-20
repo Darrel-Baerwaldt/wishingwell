@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as React from "react";
 import { Container } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -12,7 +12,7 @@ import Register from "./components/Register";
 import Adventurous from "./components/Adventurous";
 import Angry from "./components/Angry";
 import Happy from "./components/happy/Happy";
-import Inspired from "./components/Inspired";
+// import Inspired from "./components/Inspired";
 import Party from "./components/Party";
 import Sad from "./components/Sad";
 import Sleepy from "./components/Sleepy";
@@ -21,7 +21,7 @@ import Bored from "./components/Bored";
 import Zen from "./components/Zen";
 
 function App() {
-  const {userId} = useParams()
+  // const {userId} = useParams()
   return (
     <div className="App">
       <Container component="main" maxWidth="md">
@@ -37,7 +37,7 @@ function App() {
             <Route path="/angry" element={<Angry />} />
             <Route path="/bored" element={<Bored />} />
             <Route path="/happy" element={<Happy />} />
-            <Route path="/inspired" element={<Inspired />} />
+            {/* <Route path="/inspired" element={<Inspired />} /> */}
             <Route path="/party" element={<Party />} />
             <Route path="/sad" element={<Sad />} />
             <Route path="/sleepy" element={<Sleepy />} />

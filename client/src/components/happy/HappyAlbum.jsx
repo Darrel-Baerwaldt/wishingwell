@@ -12,30 +12,23 @@ import Box from '@mui/material/Box';
 // import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import UploadPhoto from './UploadPhoto'
+// import axios from 'axios'
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const selfies = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const theme = createTheme();
 
-export default function Album() {
-
+export default function HappyAlbum() {
   const [showForm, setShowForm] = useState(false)
+  // const [selfies, setSelfies] = useState([])
+
+  // useEffect(() => {
+  //   axios.get("/happy").then(res => setSelfies(res.data)).catch(error => console.log(error))
+  // })
 
   function handleClick() {
     setShowForm(!showForm)
@@ -46,6 +39,7 @@ export default function Album() {
       <CssBaseline />
       {/* <UploadPhoto /> */}
       <main>
+    
         {/* Hero unit */}
         <Box
           sx={{
@@ -83,11 +77,19 @@ export default function Album() {
               {showForm ? <UploadPhoto /> : !showForm}
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
+        {/* {!selfies.length ? ( */}
+    {/* //   <img src={loading} alt="loading" /> */}
+    {/* // ) : ( */}
+    {/* if (!selfies.length) {
+      console.log("no selfies exist")
+    } else { */}
+
+        <Container  sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
+          
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {selfies.map((selfie) => (
+              <Grid item key={selfie} xs={12} sm={6} md={4}>
                 <Card
                   sx={{ maxWidth: 345, height: '100%', display: 'flex', flexDirection: 'column' }}
                 >
@@ -114,6 +116,9 @@ export default function Album() {
             ))}
           </Grid>
         </Container>
+    {/* } */}
+            {/* // )} */}
+      
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
@@ -128,7 +133,7 @@ export default function Album() {
         >
           Something here to give the footer a purpose!
         </Typography>
-        <Copyright />
+        {/* <Copyright /> */}
       </Box>
       {/* End footer */}
     </ThemeProvider>

@@ -1,10 +1,11 @@
 import HappyAlbum from './HappyAlbum'
+// import {useState, useEffect} from 'react'
+// import axios from 'axios'
 
-export default function HappyPage() {
+export default function Happy() {
+ 
     return (
       <div>
-          {/* <h1>Happy Day!!</h1>
-          <p>Let's have some fun.</p> */}
           <HappyAlbum />
       </div>
     )
