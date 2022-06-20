@@ -33,6 +33,7 @@ export default function SignIn() {
     event.preventDefault();
     try {
       const {data: res} = await axios.post("http://localhost:3001/users/login", data)
+      console.log(res.data)
       localStorage.setItem("token", res.data)
       res.cookie("Access Token", res.data)
       navigate('/moodwall')
