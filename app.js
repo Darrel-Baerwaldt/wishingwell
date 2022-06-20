@@ -21,7 +21,7 @@ mongoose
   useUnifiedTopology: true,
 })
 .then((res) => console.log('db connected'))
-.catch((err) => console.log(err));
+.catch((err) => console.log("Could not connect to dB ", err));
 
 
 app.use(cors())
