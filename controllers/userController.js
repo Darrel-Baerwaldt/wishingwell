@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const { User } = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
@@ -10,7 +10,7 @@ exports.userTest = async (req, res) => {
 };
 
 exports.userRegister = async (req, res, next) => {
-  const { fName, lName, username, email, zipcode, password } = req.body;
+  const { fName, lName, username, email, password } = req.body;
 
   const user = await User.findOne({ email: email });
 
@@ -23,7 +23,6 @@ exports.userRegister = async (req, res, next) => {
       lName,
       username,
       email,
-      zipcode,
       password: hash,
     });
 

@@ -40,7 +40,6 @@ export default function Register() {
       fName: data.get('fName'),
       lName: data.get('lName'),
       username: data.get('username'),
-      zipCode: data.get('zipCode'),
       email: data.get('email'),
       password: data.get('password'),
     }
@@ -108,17 +107,6 @@ export default function Register() {
                   label="Username"
                   name="username"
                   autoComplete="username"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="zipCode"
-                  label="ZipCode"
-                  type="number"
-                  id="zipCode"
-                  autoComplete="new-zipCode"
                 />
               </Grid>
               <Grid item xs={12}>
