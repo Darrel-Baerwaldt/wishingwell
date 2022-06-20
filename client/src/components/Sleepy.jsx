@@ -17,10 +17,10 @@ export default function SleepyPage() {
         {<SleepyParticles />}
       </Button>
       ;
-      <p style={{color: "darkGray"}}>
+      {/* <p style={{color: "darkGray"}}>
      Track: The Deepest Ocean
      Music by https://www.fiftysounds.com 
-     </p>
+     </p> */}
     </div>
   );
 }

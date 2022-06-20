@@ -4,10 +4,10 @@ const jwt = require("jsonwebtoken");
 const secret = process.env.JWT_SECRET;
 const saltRounds = +process.env.BCRYPT_SALT;
 
-exports.userTest = async (req, res) => {
-  // await User.findOne({username: "username", password: "password"}).then((user) => res.json(user));
-  res.send("Darrel");
-};
+// exports.userTest = async (req, res) => {
+//   // await User.findOne({username: "username", password: "password"}).then((user) => res.json(user));
+//   res.send("Darrel");
+// };
 
 exports.userRegister = async (req, res, next) => {
   const { fName, lName, username, email, password } = req.body;
@@ -33,3 +33,4 @@ exports.userRegister = async (req, res, next) => {
   console.log("User already exsits");
   res.json("User already exsits");
 };
+

@@ -1,4 +1,6 @@
 const mongoose = require("mongoose")
+const { Schema } = require('mongoose'); 
+
 const jwt = require('jsonwebtoken')
 const secret = process.env.JWT_SECRET;
 const Joi = require('joi')
@@ -11,6 +13,13 @@ const userSchema = mongoose.Schema({
     username: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
+    // selfies: {
+    //     photos: [
+    //       {
+    //         photoId: { type: Schema.Types.ObjectId, ref: 'Selfie' },
+    //       },
+    //     ],
+    //   },
 })
 
 userSchema.methods.generateAccessToken = function () {

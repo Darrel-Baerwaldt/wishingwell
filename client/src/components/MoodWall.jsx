@@ -19,6 +19,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 
 export default function Key() {
   const navigate = useNavigate();
+  // const userId = useParams()
 
   const stressed = () => {
     navigate("/stressed");
