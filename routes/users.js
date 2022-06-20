@@ -13,7 +13,7 @@ const userController = require("../controllers/userController")
 //   // await User.findOne({username: "username", password: "password"}).then((user) => res.json(user));
 //   res.send("Darrel")
 // });
-router.get('/', userController.userTest);
+// router.get('/', userController.userTest);
 
 // router.post('/login', userController.userLogin);
 router.post("/login", async(req, res) => {
