@@ -11,6 +11,7 @@ const app = express();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 // const happyRouter = require('./routes/happy');
+const journalsRouter = require('./routes/journals');
 
 mongoose
 .connect(process.env.DB_URI, {
@@ -38,6 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 // app.use('/happy', happyRouter)
+app.use('/journals', journalsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
