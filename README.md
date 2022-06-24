@@ -1,6 +1,8 @@
 Project Title:
 Wishing Well
 
+View this project live at https://wishingwellmoods.herokuapp.com/ (coming soon)
+
 Description
 V1 - A React Web application for tracking and enhancing users daily moods! To access the "Mood Wall", a user must first sign in. Upon successful login, they will be redirected to the "Mood Wall", where they can choose their current mood experience different mood enhancing activities like, games, inspirational quotes, journal entries, and more!
 
