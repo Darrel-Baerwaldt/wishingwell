@@ -1,11 +1,20 @@
 // import { useState, useEffect } from 'react';
+// import Avatar from '@mui/material/Avatar';
+// import Button from '@mui/material/Button';
+// import CssBaseline from '@mui/material/CssBaseline';
 // import TextField from '@mui/material/TextField';
 // import FormControlLabel from '@mui/material/FormControlLabel';
 // import Checkbox from '@mui/material/Checkbox';
 // import Link from '@mui/material/Link';
 // import Grid from '@mui/material/Grid';
 // import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
+// import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+// import Typography from '@mui/material/Typography';
+// import Container from '@mui/material/Container';
+// import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { useNavigate } from 'react-router-dom'
+// import axios from 'axios'
+// import { TextareaAutosize } from '@mui/base';
 
 // const journalEntries = [];
 
@@ -21,9 +30,23 @@
 //         setJournals(data);
 //       });
 //     }, []);
-    
-//     const createJournalEntry = () => {
-      
+
+//     const handleSubmit = async (event) => {
+//         event.preventDefault();
+//         try {
+//           const {journals: res} = await axios.post("/journals", journals)
+//           console.log(res.journals)
+//           alert('Your entry was saved.')
+//           navigate('/inspired')
+//         } catch (error) {
+//           if (
+//             error.response &&
+//             error.response.status >= 400 &&
+//             error.response.status <= 500
+//           ) {
+//             setError(error.response.data.message)
+//           }
+//         }
 //     }
 
 //     console.log(journals)
@@ -54,12 +77,12 @@
 //               onChange={handleChange}
 //               required
 //               fullWidth
-//               id="email"
-//               type="email"
-//               label="Email Address"
-//               name="email"
-//               value={data.email}
-//               autoComplete="email"
+//               id="title"
+//               type="title"
+//               label="Title"
+//               name="title"
+//               value={journals.title}
+//               autoComplete="title"
 //               autoFocus
 //             />
 //             <TextField
@@ -67,12 +90,22 @@
 //               required
 //               fullWidth
 //               onChange={handleChange}
-//               type="password"
-//               name="password"
-//               label="Password"
-//               id="password"
-//               value={data.password}
-//               autoComplete="current-password"
+//               type="text"
+//               name="date"
+//               label="date"
+//               id="date"
+//               value={journals.date}
+//             />
+//             <TextareaAutosize
+//               margin="normal"
+//               required
+//               fullWidth
+//               onChange={handleChange}
+//               type="text"
+//               name="body"
+//               label="body"
+//               id="body"
+//               value={journals.body}
 //             />
 //             <Button
 //               type="submit"
@@ -82,7 +115,7 @@
 //               style={{color: "white"}}
 //               sx={{ mt: 3, mb: 2 }}
 //             >
-//               Sign In
+//               Submit Entry
 //             </Button>
 //             </Box>
 //       </div>
